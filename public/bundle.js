@@ -69,13 +69,14 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person_js__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
 // import './utils.js';
-// import { square, add } from './utils.js';
 
-// console.log('app.js is running!');
-// console.log(square(4));
-// console.log(add(100, 23));
+
+console.log('app.js is running!');
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["c" /* square */](4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](100, 23));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* default */](100, 81));
 
 // person.js
 // named export isAdult(18) - true if adult, otherwise false
@@ -84,24 +85,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import isAdult and canDrink
 // use both printing result to the console
 
+// import { isAdult, canDrink } from './person.js';
 
-
-console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["b" /* isAdult */](20));
-console.log(__WEBPACK_IMPORTED_MODULE_0__person_js__["a" /* canDrink */](10));
+// console.log(isAdult(17));
+// console.log(canDrink(18));
 
 /***/ }),
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isAdult; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
-const isAdult = (age) => age >= 18;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return square; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return subtract; });
+console.log('utils.js is running');
 
-const canDrink = (age) => age >= 21;
+const square = (x) => x * x;
+
+const add = (a, b) => a + b;
+
+const subtract = (a, b) => a - b;
 
 
+
+
+
+// exports - default export - named exports
 
 /***/ })
 /******/ ]);
