@@ -17,6 +17,8 @@ const oldSyntax = new OldSyntax();
 const getGreeting = oldSyntax.getGreeting;
 console.log(getGreeting());
 
+// ---------
+
 class NewSyntax {
     name = 'Jen';
     getGreeting = () => {

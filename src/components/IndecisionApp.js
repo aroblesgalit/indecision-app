@@ -8,27 +8,6 @@ export default class IndecisionApp extends React.Component {
     state = {
         options: []
     }
-    componentDidMount() {
-        try {
-            const json = localStorage.getItem('options');
-            const options = JSON.parse(json);
-    
-            if (options) {
-                this.setState(() => ({ options }))
-            } 
-        } catch (e) {
-            // Do nothing at all
-        }  
-    }
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.options.length !== this.state.options.length) {
-            const json = JSON.stringify(this.state.options);
-            localStorage.setItem('options', json);
-        }
-    }
-    componentWillUnmount() {
-        console.log('componentWillUnmount!');
-    }
     handleDeleteOptions = () => {
         this.setState(() => ({ options: [] }));
     }
@@ -52,6 +31,27 @@ export default class IndecisionApp extends React.Component {
         this.setState((prevState) => ({ 
             options: prevState.options.concat(option) 
         }));
+    }
+    componentDidMount() {
+        try {
+            const json = localStorage.getItem('options');
+            const options = JSON.parse(json);
+    
+            if (options) {
+                this.setState(() => ({ options }))
+            } 
+        } catch (e) {
+            // Do nothing at all
+        }  
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.options.length !== this.state.options.length) {
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json);
+        }
+    }
+    componentWillUnmount() {
+        console.log('componentWillUnmount!');
     }
     render() {
         const title = 'Indecision';
